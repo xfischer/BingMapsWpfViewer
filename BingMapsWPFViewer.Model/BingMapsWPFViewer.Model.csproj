@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1E6D820-C12F-45EC-A124-F30C899F73FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BingMapsWPFViewer.Model</RootNamespace>
+    <AssemblyName>BingMapsWPFViewer.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\ShapeFileLayer.cs" />
+    <Compile Include="Models\TileGridLayer.cs" />
+    <Compile Include="Services\Criteria\SpatialQueryCriterion.cs" />
+    <Compile Include="Services\FeatureServiceBase.cs" />
+    <Compile Include="Models\Features\enFeatureFieldUsage.cs" />
+    <Compile Include="Models\Features\Feature.cs" />
+    <Compile Include="Models\Features\FeatureField.cs" />
+    <Compile Include="Models\Features\FeatureFilterField.cs" />
+    <Compile Include="Models\Features\FeatureFieldHelper.cs" />
+    <Compile Include="Models\LayerBase\LayerBase.cs" />
+    <Compile Include="Models\LayerBase\enLayerType.cs" />
+    <Compile Include="Models\LayerBase\TileLayerBase.cs" />
+    <Compile Include="Models\LayerBase\VectorLayerBase.cs" />
+    <Compile Include="Models\MapRepository.cs" />
+    <Compile Include="Models\SqlServerInfoSchema\enGridLevel.cs" />
+    <Compile Include="Models\SqlServerInfoSchema\enSqlConstraintType.cs" />
+    <Compile Include="Models\SqlServerInfoSchema\enSqlIndexType.cs" />
+    <Compile Include="Models\SqlServerInfoSchema\SqlIndex.cs" />
+    <Compile Include="Models\SqlServerInfoSchema\SqlSpatialIndex.cs" />
+    <Compile Include="Services\FeatureServices\ISpatialFeatureService.cs" />
+    <Compile Include="Services\ICancelable.cs" />
+    <Compile Include="Services\IFeatureServiceBase.cs" />
+    <Compile Include="Services\IServiceBase.cs" />
+    <Compile Include="Services\SqlServerInfoSchema\ISqlServerInfoSchemaService.cs" />
+    <Compile Include="Models\SqlServerInfoSchema\SqlColumn.cs" />
+    <Compile Include="Services\SqlServerInfoSchema\SqlServerInfoSchemaService.cs" />
+    <Compile Include="Models\SqlServerInfoSchema\SqlTable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\SqlServerLayer.cs" />
+    <Compile Include="Models\GoogleTileLayer.cs" />
+    <Compile Include="Models\TileLayerXYZ.cs" />
+    <Compile Include="Services\AsyncResponse.cs" />
+    <Compile Include="Services\Criteria\CriterionBase.cs" />
+    <Compile Include="Services\Layers\CriterionLayer.cs" />
+    <Compile Include="Services\Layers\ILayersService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BingMapsWPFViewer.Framework\BingMapsWPFViewer.Framework.csproj">
+      <Project>{02D66CE1-317F-4089-8451-AEF858587952}</Project>
+      <Name>BingMapsWPFViewer.Framework</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BingMapsWPFViewer.Tools\BingMapsWPFViewer.Tools.csproj">
+      <Project>{f6f2cda7-db43-41a2-bdf2-c16c1f117e0b}</Project>
+      <Name>BingMapsWPFViewer.Tools</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

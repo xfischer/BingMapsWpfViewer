@@ -1,0 +1,161 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:f="http://bingmapswpfviewer.codeplex.com/Framework">
+
+    <DataTemplate x:Key="SQLServerLayerControlDataTemplate">
+        <Grid Margin="5" ShowGridLines="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition Width="230*" />
+            </Grid.ColumnDefinitions>
+
+
+            <CheckBox VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Grid.Column="0"
+                      Grid.RowSpan="3"
+                      IsChecked="{Binding IsEnabled}" />
+            
+            <Image Grid.Row="0"
+                   Grid.RowSpan="3"
+                   Grid.Column="1"
+                   HorizontalAlignment="Left"
+                   Width="24"
+                   Height="24"
+                   Source="{Binding IconImage}" />
+
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="2"
+                       Text="{Binding DisplayName, Mode=OneWay}"
+                       Margin="0" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="2"
+                       Margin="0,2,2,2"
+                       FontSize="9"
+                       Text="{Binding LayerType}" />
+            <StackPanel Grid.Row="2"
+                        Grid.Column="2"
+                        Margin="0,2,2,2"
+                        Orientation="Horizontal">
+                <TextBlock FontSize="9"
+                           Text="ZIndex: "
+                           Margin="0" />
+                <TextBlock FontSize="9"
+                           Text="{Binding ZIndex}"
+                           Margin="2,0,0,0" />
+                <TextBlock Margin="5,0,0,0"
+                           FontSize="9"
+                           FontWeight="Bold"
+                           Foreground="Blue"
+                           Text="{Binding LoadingText}" />
+            </StackPanel>
+
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TileLayerXYZLayerControlDataTemplate">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition Width="230*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0"
+                   Grid.RowSpan="3"
+                   Grid.Column="0"
+                   HorizontalAlignment="Left"
+                   Width="24"
+                   Height="24"
+                   Source="{Binding IconImage}" />
+
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Text="{Binding DisplayName, Mode=OneWay}"
+                       Margin="0" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="0,2,2,2"
+                       FontSize="9"
+                       Text="{Binding LayerType}" />
+            <StackPanel Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,2,2,2"
+                        Orientation="Horizontal">
+                <TextBlock FontSize="9"
+                           Text="ZIndex: "
+                           Margin="0" />
+                <TextBlock FontSize="9"
+                           Text="{Binding ZIndex}"
+                           Margin="2,0,0,0" />
+                <TextBlock Margin="5,0,0,0"
+                           FontSize="9"
+                           FontWeight="Bold"
+                           Foreground="Blue"
+                           Text="{Binding LoadingText}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DefaultLayerControlDataTemplate">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition Width="230*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0"
+                   Grid.RowSpan="3"
+                   Grid.Column="0"
+                   HorizontalAlignment="Left"
+                   Width="24"
+                   Height="24"
+                   Source="{Binding IconImage}" />
+
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Text="{Binding DisplayName, Mode=OneWay}"
+                       Margin="0" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="0,2,2,2"
+                       FontSize="9"
+                       Text="{Binding LayerType}" />
+            <StackPanel Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,2,2,2"
+                        Orientation="Horizontal">
+                <TextBlock FontSize="9"
+                           Text="ZIndex: "
+                           Margin="0" />
+                <TextBlock FontSize="9"
+                           Text="{Binding ZIndex}"
+                           Margin="2,0,0,0" />
+                <TextBlock Margin="5,0,0,0"
+                           FontSize="9"
+                           FontWeight="Bold"
+                           Foreground="Blue"
+                           Text="{Binding LoadingText}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>
+    

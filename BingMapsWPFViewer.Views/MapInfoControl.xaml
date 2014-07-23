@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="BingMapsWPFViewer.Views.MapInfoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="98" />
+            <ColumnDefinition Width="86" />
+            <ColumnDefinition Width="159" />
+            <ColumnDefinition Width="129*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="Width (pixels): "
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Height="26"
+               Width="88" />
+        <TextBox HorizontalAlignment="Left"
+                 Height="23"
+                 Text="{Binding Viewport.Width, Mode=OneWay}"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="54"
+                 Grid.Column="1" />
+        <Label Content="Height (pixels): "
+               HorizontalAlignment="Left"
+               Grid.Column="2"
+               Width="92" />
+        <TextBox HorizontalAlignment="Left"
+                 Height="23"
+                 Text="{Binding Viewport.Height, Mode=OneWay}"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="54"
+                 Grid.Column="3" />
+        <Label Content="Zoom level:"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Grid.Row="1"
+               Height="26"
+               Width="71" />
+        <TextBox HorizontalAlignment="Left"
+                 Height="23"
+                 Text="{Binding Viewport.ZoomLevel, Mode=OneWay}"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="54"
+                 Grid.Row="1"
+                 Grid.Column="1" />
+        <Label Content="Resolution (degrees/pixel):"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Grid.Row="1"
+               Grid.Column="2"
+               Height="26"
+               Width="151" />
+        <TextBox HorizontalAlignment="Stretch"
+                 Height="23"
+                 Text="{Binding Viewport.MapResolution, Mode=OneWay}"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Grid.Row="1"
+                 Grid.Column="3" />
+        <Label Content="Bounding box:"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Grid.Row="2"
+               Height="26"
+               Width="87"
+               Grid.Column="0" />
+        <TextBox HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Viewport.GeographicBounds.WKT, Mode=OneWay}"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 Grid.Row="2"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3" />
+
+    </Grid>
+</UserControl>

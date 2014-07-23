@@ -1,0 +1,38 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Model="clr-namespace:BingMapsWPFViewer.Model;assembly=BingMapsWPFViewer.Model"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:v="clr-namespace:BingMapsWPFViewer.Views"
+        xmlns:f="http://bingmapswpfviewer.codeplex.com/Framework"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="BingMapsWPFViewer.Views.SetupView"
+        Title="Settings" Height="222" Width="371"
+        WindowStartupLocation="CenterOwner"
+        f:DialogCloser.DialogResult="{Binding DialogResult}">
+    <Grid>
+        <Label Content="Enter your Bing Maps API Key here :"
+               Height="28"
+               HorizontalAlignment="Left"
+               Margin="10,10,0,0"
+               Name="label1"
+               VerticalAlignment="Top" />
+        <TextBox Height="23"
+                 HorizontalAlignment="Left"
+                 Margin="10,48,0,0"
+                 Text="{Binding APIKey, Mode=TwoWay}"
+                 VerticalAlignment="Top"
+                 Width="320" />
+        <Button Content="Cancel"
+                Margin="12,144,258,12"
+                Command="{Binding CloseCommand}"
+                IsDefault="True"/>
+        <Button Content="Save"
+                Margin="250,0,20,12"
+                Command="{Binding SaveCommand}"
+                Height="27"
+                VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

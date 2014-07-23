@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  
+    <!-- NewTileLayerXYZDataTemplate -->
+    <DataTemplate x:Key="TileLayerXYZDataTemplate">
+        <!-- XYZ Layer -->
+        <GroupBox x:Name="grpTileLayerXYZ"
+                  Header="Tile layer XYZ settings"
+                  Background="White"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="3"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Visibility="Visible">
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0"
+                           Margin="5"
+                           Grid.Row="0">URL Pattern :</TextBlock>
+                <TextBox x:Name="txtTileLayerXYZPattern"
+                         Grid.Column="1"
+                         Margin="5"
+                         Grid.Row="0"
+                         Text="{Binding UrlPattern, Mode=TwoWay, ValidatesOnDataErrors=True}"></TextBox>
+                <TextBlock Grid.Column="1"
+                           Margin="5,0,5,5"
+                           Grid.Row="1">
+                 URL should be a valid format string containing {0}, {1}, {2} for x, y, z where :<LineBreak />
+                 {0} is X : column / east-west tile coordinate<LineBreak />
+                 {1} is Y : row / north-south tile coordinate<LineBreak />
+                 {2} is Z : zoom level<LineBreak /></TextBlock>
+            </Grid>
+        </GroupBox>
+
+    </DataTemplate>
+
+</ResourceDictionary>

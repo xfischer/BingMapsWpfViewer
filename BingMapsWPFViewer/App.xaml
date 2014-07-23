@@ -1,0 +1,25 @@
+﻿<Application x:Class="BingMapsWPFViewer.Main.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:fwk="http://bingmapswpfviewer.codeplex.com/Framework">
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/BingMapsWPFViewer.Views;component/DataTemplates/LayerControl/LayerControlDataTemplates.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/BingMapsWPFViewer.Views;component/DataTemplates/FeatureTooltipDataTemplate.xaml" />
+
+                <!-- Edit Layer data templates -->
+                <ResourceDictionary Source="pack://application:,,,/BingMapsWPFViewer.Views;component/DataTemplates/EditLayers/DefaultLayerDataTemplate.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/BingMapsWPFViewer.Views;component/DataTemplates/EditLayers/SQLServerLayerDataTemplate.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/BingMapsWPFViewer.Views;component/DataTemplates/EditLayers/ShapeFileLayerDataTemplate.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/BingMapsWPFViewer.Views;component/DataTemplates/EditLayers/TileLayerXYZDataTemplate.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/BingMapsWPFViewer.Views;component/DataTemplates/EditLayers/TileGridLayerDataTemplate.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+            
+            <fwk:ViewTypeLocator x:Key="ViewTypeLocator" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

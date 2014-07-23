@@ -1,0 +1,35 @@
+﻿<Window x:Class="BingMapsWPFViewer.Framework.Messages.SaveOrCancelWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="{DynamicResource ControlBackgroundPressed}"
+    WindowStyle="ToolWindow">
+  <UserControl>
+    <DockPanel LastChildFill="True">
+      <Grid DockPanel.Dock="Bottom">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="_cancelButton" Click="_cancelButton_Click"
+            IsCancel="True" ToolTip="Annuler" Grid.Column="1" Margin="5">
+          <DockPanel>
+            <Image Width="12" Height="12" DockPanel.Dock="Left"
+                Source="Images/Cancel.png" />
+            <TextBlock Text="Annuler" />
+          </DockPanel>
+        </Button>
+        <Button x:Name="_saveButton" Click="_saveButton_Click" IsDefault="True"
+            ToolTip="Sauvegarder" Margin="5">
+          <DockPanel>
+            <Image Width="12" Height="12" DockPanel.Dock="Left"
+                Source="Images/OK.png" />
+            <TextBlock Text="Sauvegarder" />
+          </DockPanel>
+        </Button>
+      </Grid>
+      <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+        <ContentPresenter Content="{Binding .}" />
+      </ScrollViewer>
+    </DockPanel>
+  </UserControl>
+</Window>

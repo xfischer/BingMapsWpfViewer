@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BingMapsWPFViewer.ViewModel.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BingKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">YOUR_API_KEY_HERE</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

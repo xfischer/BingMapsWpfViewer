@@ -1,0 +1,215 @@
+﻿<UserControl x:Class="BingMapsWPFViewer.Tools.DataConnectionUI.SqlConnectionUIControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="460"
+             d:DesignWidth="360">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        
+        <!-- Server -->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="75" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Server Name:"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Margin="3" />
+            <ComboBox x:Name="cmbServer"
+                      Margin="3"
+                      Grid.Column="0"
+                      Grid.Row="1"
+                      IsEditable="True"
+                      DropDownOpened="cmbServer_DropDownOpened"
+                      KeyDown="cmbServer_KeyDown"
+                      LostFocus="cmbServer_LostFocus"
+                      TextBoxBase.TextChanged="cmbServer_TextChanged" />
+            <Button x:Name="btnRefreshServers"
+                    Margin="3"
+                    Content="Refresh"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Click="btnRefreshServers_Click" />
+        </Grid>
+
+        <!-- Logon -->
+        <GroupBox Header="Log on to the server"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Height="167"
+                  Grid.Row="1">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="23" />
+                    <RowDefinition Height="23" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <RadioButton x:Name="rdWindowsAuth" Content="Use Windows Authentication" Grid.Row="0"
+                             Checked="rdWindowsAuth_Checked"
+                             IsChecked="True" />
+                <RadioButton x:Name="rdSqlAuth" Content="Use SQL Server Authentication"
+                             Grid.Row="1"
+                             Checked="rdSqlAuth_Checked" />
+                
+                <!-- User name / password -->
+                <Grid Grid.Row="2"
+                      Margin="20,0,0,0"
+                      x:Name="gridLogin"
+                      IsEnabled="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="User Name:"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               Margin="3" />
+                    <TextBlock Text="Password:"
+                               Margin="3"
+                               Grid.Row="1"
+                               Grid.Column="0" />
+                    <CheckBox Content="Save my password"
+                              x:Name="chkSavePassword"
+                              Margin="3,0,3,0"
+                               Grid.Row="2"
+                               Grid.Column="1"
+                              Checked="chkSavePassword_Checked" />
+
+                    <TextBox x:Name="txtUserName"
+                             Grid.Row="0"
+                             Grid.Column="1"
+                             Margin="3"
+                             LostFocus="txtUserName_LostFocus"
+                             TextChanged="txtUserName_TextChanged" />
+                    <PasswordBox x:Name="txtPassword"
+                                 Grid.Row="1"
+                                 Grid.Column="1"
+                                 Margin="3"
+                                 PasswordChar="*"
+                                 PasswordChanged="txtPassword_PasswordChanged" />
+                </Grid>
+                
+            </Grid>
+        </GroupBox>
+        
+        <!-- Database -->
+        <GroupBox Header="Connect to a database"
+                  x:Name="grpDatabase"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Height="200"
+                  Grid.Row="2">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="23" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="23" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <RadioButton x:Name="rdSelectDatabase"
+                             Content="Select or enter a database name:"
+                             Grid.Row="0"
+                             Checked="rdSelectDatabase_Checked"
+                             IsChecked="True" />
+                <RadioButton x:Name="rdAttachDatabase"
+                             Content="Attach a database file:"
+                             Grid.Row="2"
+                             Checked="rdAttachDatabase_Checked" />
+
+                <ComboBox x:Name="cmbDatabase"
+                          Grid.Row="1"
+                          IsEditable="True"
+                          Margin="20,0,0,7"
+                          KeyDown="cmbDatabase_KeyDown"
+                          DropDownOpened="cmbDatabase_DropDownOpened"
+                          LostFocus="cmbDatabase_LostFocus"
+                          TextBoxBase.TextChanged="cmbDatabase_TextChanged" />
+                
+                <Grid Grid.Row="3" Margin="20,0,0,0" x:Name="gridAttachDatabase" IsEnabled="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="75" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="23" />
+                    </Grid.RowDefinitions>
+
+                    <TextBox x:Name="txtAttachDatabase"
+                             Grid.Row="0"
+                             Grid.Column="0"
+                             TextChanged="txtAttachDatabase_TextChanged"
+                             LostFocus="txtAttachDatabase_LostFocus" />
+                    <Button x:Name="btnBrowseAttach"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Content="Browse..."
+                            Click="btnBrowseAttach_Click" />
+
+                    <TextBlock Text="Logical name:"
+                             Grid.Row="1"
+                             Grid.Column="0"
+                               Margin="0,3,0,0"
+                             Grid.ColumnSpan="2" />
+                    <TextBox x:Name="txtLogicalName"
+                             TextChanged="txtLogicalName_TextChanged"
+                             LostFocus="txtLogicalName_LostFocus"
+                             Grid.Row="2"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="2"/>
+                </Grid>
+
+            </Grid>
+        </GroupBox>
+        
+        <!-- Buttons -->
+        <Grid Grid.Row="3" Margin="0,3,0,3" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="btnTest" Content="Test Connection" Grid.Column="0" Width="100" Height="28"
+                    Click="btnTest_Click" />
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right">
+                <Button x:Name="btnOK" Content="OK"
+                        Width="80"
+                        Height="28"
+                        IsEnabled="False"
+                        Click="btnOK_Click" />
+                <Button Content="Cancel"
+                        Width="80"
+                        Margin="10,0,0,0"
+                        Height="28"
+                        IsCancel="True" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</UserControl>

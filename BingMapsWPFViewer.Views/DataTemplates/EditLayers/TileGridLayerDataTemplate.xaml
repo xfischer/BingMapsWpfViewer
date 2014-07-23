@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  
+    <!-- TileGridLayerDataTemplate -->
+    <DataTemplate x:Key="TileGridLayerDataTemplate">
+        <!-- Tile Grid Layer -->
+        <GroupBox x:Name="grpTileGridLayer"
+                  Header="Tile Grid Layer settings"
+                  Background="White"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="3"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Visibility="Visible">
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0"
+                           Margin="5"
+                           TextWrapping="Wrap"
+                           Grid.Row="0">There are no specific settings for this layer.<LineBreak /> Just create an go on !</TextBlock>
+            </Grid>
+        </GroupBox>
+
+    </DataTemplate>
+
+</ResourceDictionary>

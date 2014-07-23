@@ -1,0 +1,138 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="SQLServerLayerDataTemplate">
+        
+        <!-- SQL Layer -->
+        <GroupBox x:Name="grpSQLServerLayer"
+                  Header="SQL Server layer settings"
+                  Background="White"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="3"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Visibility="Visible">
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- Connection String -->
+                <TextBlock Height="23"
+                           Text="Connection string"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="5" />
+                <Grid HorizontalAlignment="Stretch"
+                      Margin="10,5"
+                      Grid.Column="1"
+                      Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Height="25"
+                             Name="txtConnectionString"
+                             Text="{Binding ConnectionString, Mode=TwoWay, ValidatesOnDataErrors=True}"
+                             Grid.Column="0" />
+                    <Button Content="..."
+                            Width="25"
+                            Margin="3,0,0,0"
+                            Command="{Binding SetupConnectionCommand}"
+                            Grid.Column="1" />
+                </Grid>
+
+                <!-- Table name -->
+                <TextBlock Height="23"
+                           Text="Table"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="5" />
+                <ComboBox Height="25"
+                          Margin="10,5"
+                          Name="cmbTable"
+                          ItemsSource="{Binding Tables, Mode=TwoWay}"
+                          DisplayMemberPath="FullTableName"
+                          SelectedValuePath="FullTableName"
+                          SelectedValue="{Binding Path=TableName, ValidatesOnDataErrors=True}"
+                          Grid.Column="1"
+                          Grid.Row="1" />
+
+                <!-- Spatial column -->
+                <TextBlock Height="23"
+                           Text="Spatial column"
+                           Grid.Row="2"
+                           Grid.Column="0"
+                           Margin="5" />
+                <ComboBox Height="25"
+                          Margin="10,5"
+                          Name="cmbSpatialColumn"
+                          ItemsSource="{Binding SpatialColumns, Mode=OneWay}"
+                          DisplayMemberPath="ColumnName"
+                          SelectedValuePath="ColumnName"
+                          SelectedValue="{Binding Path=SpatialColumnName, ValidatesOnDataErrors=True}"
+                          Grid.Column="1"
+                          Grid.Row="2" />
+
+                <!-- Spatial index -->
+                <TextBlock Height="23"
+                           Text="Index name"
+                           Grid.Row="3"
+                           Grid.Column="0"
+                           Margin="5" />
+                <TextBlock Height="25"
+                          Margin="10,5"
+                          Text="{Binding IndexName}"
+                          Grid.Column="1"
+                          Grid.Row="3" />
+
+                <!-- SRID -->
+                <TextBlock Height="23"
+                           Text="SRID (1st row)"
+                           Grid.Row="4"
+                           Grid.Column="0"
+                           Margin="5" />
+                <TextBlock Height="25"
+                         Margin="10,5"
+                         Text="{Binding SRID}"
+                         Grid.Column="1"
+                         Grid.Row="4" />
+
+
+                <!-- Fill color -->
+                <TextBlock Grid.Row="5"
+                           Grid.Column="0"
+                           Margin="5">Fill color (#ffffff)</TextBlock>
+                <TextBox HorizontalAlignment="Stretch"
+                         Margin="10,5"
+                         Text="{Binding FillColorText}"
+                         Grid.Column="1"
+                         Grid.Row="5" />
+
+                <!-- Filter -->
+                <TextBlock Grid.Row="6"
+                           Grid.Column="0"
+                           Margin="5">Query filter<LineBreak/>(SQL syntax)</TextBlock>
+                <TextBox AcceptsReturn="True"
+                         HorizontalAlignment="Stretch"
+                         Margin="10,5"
+                         Text="{Binding QueryFilter}"
+                         Grid.Column="1"
+                         Grid.Row="6" />
+
+            </Grid>
+        </GroupBox>
+    </DataTemplate>
+
+</ResourceDictionary>
