@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
 using System.Data.SqlTypes;
+using GeoAPI.Geometries;
 
 namespace BingMapsWPFViewer.Tools.Geometry.SqlSpatial
 {

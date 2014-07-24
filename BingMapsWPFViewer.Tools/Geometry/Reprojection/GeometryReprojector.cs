@@ -136,7 +136,12 @@ namespace BingMapsWPFViewer.Tools.Geometry
 				geom.Populate(s);
 
 				// the end of our pipeline is now populated with the shifted geometry instance
-				return b.ConstructedGeometry;
+				 SqlGeometry outGeom = b.ConstructedGeometry;
+				 if (outGeom.STIsValid().IsTrue)
+					 return outGeom;
+				 else
+					 return outGeom.MakeValid();
+
 			}
 		}
 
@@ -156,7 +161,11 @@ namespace BingMapsWPFViewer.Tools.Geometry
 			geom.Populate(s);
 
 			// the end of our pipeline is now populated with the shifted geometry instance
-			return b.ConstructedGeometry;
+			SqlGeometry outGeom = b.ConstructedGeometry;
+			if (outGeom.STIsValid().IsTrue)
+				return outGeom;
+			else
+				return outGeom.MakeValid();
 		}
 
 		public SqlGeography ConvertSqlGeometry2Geography(SqlGeometry geom)
@@ -172,7 +181,11 @@ namespace BingMapsWPFViewer.Tools.Geometry
 			geom.Populate(s);
 
 			// the end of our pipeline is now populated with the shifted geometry instance
-			return b.ConstructedGeography;
+			SqlGeography outGeog = b.ConstructedGeography;
+			if (outGeog.STIsValid().IsTrue)
+				return outGeog;
+			else
+				return outGeog.MakeValid();
 		}
 
 		public SqlGeography ConvertSqlGeography2Geography(SqlGeography geom)
@@ -195,7 +208,11 @@ namespace BingMapsWPFViewer.Tools.Geometry
 				geom.Populate(s);
 
 				// the end of our pipeline is now populated with the shifted geometry instance
-				return b.ConstructedGeography;
+				SqlGeography outGeog = b.ConstructedGeography;
+				if (outGeog.STIsValid().IsTrue)
+					return outGeog;
+				else
+					return outGeog.MakeValid();
 			}
 		}
 

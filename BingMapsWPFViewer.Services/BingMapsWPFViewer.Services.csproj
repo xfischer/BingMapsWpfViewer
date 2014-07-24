@@ -35,10 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Catfood.Shapefile, Version=1.51.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\BingMapsWPFViewer\bin\Debug\Catfood.Shapefile.dll</HintPath>
-    </Reference>
     <Reference Include="GeoAPI">
       <HintPath>..\packages\GeoAPI.1.7.2\lib\net40-client\GeoAPI.dll</HintPath>
     </Reference>
@@ -91,9 +87,6 @@
       <Name>BingMapsWPFViewer.Tools</Name>
       <Private>False</Private>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Shapefile\Catfood.ShapefileExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
