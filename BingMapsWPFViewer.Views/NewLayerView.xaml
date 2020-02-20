@@ -4,7 +4,7 @@
         xmlns:Model="clr-namespace:BingMapsWPFViewer.Model;assembly=BingMapsWPFViewer.Model"
         xmlns:vm="http://bingmapswpfviewer.codeplex.com/ViewModel"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors"
         xmlns:v="clr-namespace:BingMapsWPFViewer.Views"
         xmlns:f="http://bingmapswpfviewer.codeplex.com/Framework"
         Title="New Layer"

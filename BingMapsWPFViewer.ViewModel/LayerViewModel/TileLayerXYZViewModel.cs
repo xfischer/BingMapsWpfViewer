@@ -54,7 +54,7 @@ namespace BingMapsWPFViewer.ViewModel
 		}
 
 		public TileLayerXYZViewModel()
-			: base(new TileLayerXYZ("https://dnv9my2eseobd.cloudfront.net/v3/foursquare.map-0y1jh28j/{2}/{0}/{1}.png"))
+			: base(new TileLayerXYZ("https://a.tile.openstreetmap.fr/osmfr/{2}/{0}/{1}.png"))
 		{
 		}
 

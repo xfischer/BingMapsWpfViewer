@@ -16,7 +16,7 @@ namespace BingMapsWPFViewer.Services.Mocks
 		public LayersServiceMock()
 		{
 			_layers = new List<LayerBase>();
-			_layers.Add(new TileLayerXYZ("https://dnv9my2eseobd.cloudfront.net/v3/foursquare.map-0y1jh28j/{2}/{0}/{1}.png", (x, y, z) => new Uri(string.Format("https://dnv9my2eseobd.cloudfront.net/v3/foursquare.map-0y1jh28j/{2}/{0}/{1}.png", x, y, z)))
+			_layers.Add(new TileLayerXYZ("https://a.tile.openstreetmap.fr/osmfr/{2}/{0}/{1}.png", (x, y, z) => new Uri(string.Format("https://a.tile.openstreetmap.fr/osmfr/{2}/{0}/{1}.png", x, y, z)))
 			{
 				DisplayName = "Cloud Front",
 				ZIndex = 0
