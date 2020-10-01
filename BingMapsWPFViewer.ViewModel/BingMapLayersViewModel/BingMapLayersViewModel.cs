@@ -84,6 +84,7 @@ namespace BingMapsWPFViewer.ViewModel
 			set
 			{
 				_selectedFeature = value;
+
 				RaisePropertyChanged<Feature>(() => SelectedFeature);
 			}
 		}
